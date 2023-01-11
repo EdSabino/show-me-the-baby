@@ -1,7 +1,7 @@
 function Exams(props) {
   const buildExams = () => {
     const exams = [];
-    props.exams.forEach(exam => {
+    props.exams?.forEach(exam => {
       exams.push(buildExam(exam));
     });
 

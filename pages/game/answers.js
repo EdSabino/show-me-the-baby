@@ -30,7 +30,7 @@ function Answers(props) {
 
   const buildAnswers = () => {
     const answers = [];
-    for (let i = 0; i < props.answers.length; i = i + 2) {
+    for (let i = 0; i < props.answers?.length || 0; i = i + 2) {
       answers.push(
         <div className="columns" style={{ paddingLeft: '15px' }}>
           {buildAnswer(props.answers[i])}

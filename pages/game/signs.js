@@ -25,9 +25,9 @@ function Signs(props) {
         backgroundColor: 'white',
         marginBottom: '15px'
       }}></div>
-      <h5 className="title is-5">Pulso: {props.signs.pulse}</h5>
-      <h5 className="title is-5">Peso: {props.signs.weigth}</h5>
-      <h5 className="title is-5">Altura: {props.signs.height}</h5>
+      <h5 className="title is-5">Pulso: {props.signs?.pulse}</h5>
+      <h5 className="title is-5">Peso: {props.signs?.weigth}</h5>
+      <h5 className="title is-5">Altura: {props.signs?.height}</h5>
     </div>
   </div>);
 }

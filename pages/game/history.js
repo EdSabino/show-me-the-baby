@@ -1,7 +1,7 @@
 function History(props) {
   const buildHistories = () => {
     const histories = [];
-    props.histories.forEach(history => {
+    props.histories?.forEach(history => {
       histories.push(buildHistory(history));
     });
 
