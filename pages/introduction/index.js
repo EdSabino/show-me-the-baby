@@ -15,8 +15,10 @@ function Introduction() {
   const [step, setStep] = useState(0);
 
   const talk = () => {
-    const name = localStorage.getItem('name');
-    return steps[step].replace('<name>', name);
+    if (typeof window !== 'undefined') {
+      const name = localStorage.getItem('name');
+      return steps[step].replace('<name>', name);
+    }
   }
 
   const advance = () => {
