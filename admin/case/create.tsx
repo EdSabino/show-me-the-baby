@@ -10,7 +10,7 @@ import {
   TextInput,
 } from 'react-admin';
 
-export const CaseCreate = (props) => {
+export const CaseCreate = (props: any) => {
   const [historiesCount, setHistoriesCount] = React.useState(0);
   const [examsCount, setExamsCount] = React.useState(0);
   const [answersCount, setAnswersCount] = React.useState(0);
