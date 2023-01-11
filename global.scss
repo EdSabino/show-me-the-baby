@@ -1,0 +1,66 @@
+@import "~bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: 'Roboto', sans-serif;
+  h1, h2, h3, h4, h5, h6, span {
+    color: white !important;
+  }
+}
+
+.center {
+  margin: auto;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}
+
+body {
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.img-hover {
+  filter: grayscale(100%);
+}
+
+.img-hover:hover {
+  filter: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  font: 17px/3 sans-serif;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+input, select, textarea{
+  color: #ffffff;
+}
+
+.RaLayout-appFrame input, .RaLayout-appFrame ::placeholder, .RaLayout-appFrame span {
+  color: black !important;
+}
+

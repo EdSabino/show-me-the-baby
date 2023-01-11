@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Case {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String
+  signs       Signs?
+  histories   History[]
+  exams       Exam[]
+  answers     Answer[]
+}
+
+model Answer {
+  id          Int     @id @default(autoincrement())
+  description String
+  isCorrect   Boolean
+  reason      String
+  caseId      Int
+  case        Case    @relation(fields: [caseId], references: [id])
+}
+
+model Exam {
+  id          Int    @id @default(autoincrement())
+  date        String
+  description String
+  caseId      Int
+  case        Case   @relation(fields: [caseId], references: [id])
+}
+
+model History {
+  id          Int    @id @default(autoincrement())
+  date        String
+  description String
+  caseId      Int
+  case        Case   @relation(fields: [caseId], references: [id])
+}
+
+model Signs {
+  id     Int    @id @default(autoincrement())
+  pulse  String
+  weigth Int
+  height Int
+  caseId Int    @unique
+  case   Case   @relation(fields: [caseId], references: [id])
+}
+
+model Game {
+  id   Int    @id @default(autoincrement())
+  name String
+  ip   String
+}

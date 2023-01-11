@@ -1,0 +1,36 @@
+{
+  "name": "show-me-the-baby-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.2.1",
+    "axios": "^0.27.2",
+    "bulma": "^0.9.4",
+    "next": "^12.1.6",
+    "ra-data-simple-rest": "^4.3.0",
+    "react": "^18.1.0",
+    "react-admin": "^4.3.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
+    "react-spinners": "^0.13.3",
+    "request-ip": "^3.3.0",
+    "sass": "^1.53.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.10",
+    "@types/react": "^18.0.17",
+    "prisma": "^4.2.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}
