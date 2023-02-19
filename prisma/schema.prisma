@@ -30,7 +30,7 @@ model Answer {
   isCorrect   Boolean
   reason      String
   caseId      Int
-  case        Case    @relation(fields: [caseId], references: [id])
+  case        Case    @relation(fields: [caseId], references: [id], onDelete: Cascade)
 }
 
 model Exam {
@@ -38,7 +38,7 @@ model Exam {
   date        String
   description String
   caseId      Int
-  case        Case   @relation(fields: [caseId], references: [id])
+  case        Case   @relation(fields: [caseId], references: [id], onDelete: Cascade)
 }
 
 model History {
@@ -46,7 +46,7 @@ model History {
   date        String
   description String
   caseId      Int
-  case        Case   @relation(fields: [caseId], references: [id])
+  case        Case   @relation(fields: [caseId], references: [id], onDelete: Cascade)
 }
 
 model Signs {
@@ -55,7 +55,7 @@ model Signs {
   weigth Int
   height Int
   caseId Int    @unique
-  case   Case   @relation(fields: [caseId], references: [id])
+  case   Case   @relation(fields: [caseId], references: [id], onDelete: Cascade)
 }
 
 model Game {
