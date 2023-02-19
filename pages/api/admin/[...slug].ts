@@ -51,7 +51,7 @@ async function getResolver(req, res, slug) {
         [sort[0]]: sort[1].toLowerCase()
       };
     }
-    const count = await prisma.case.count(search);
+    const count = await prisma[slug[0]].count(search);
     if (req.query.range) {
       const range = JSON.parse(req.query.range);
       search['skip'] = range[0];
