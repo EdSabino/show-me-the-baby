@@ -10,7 +10,8 @@ import Answers from "./answers";
 import ClipLoader from "react-spinners/ClipLoader";
 
 function Game() {
-  const [actualPath, setPath] = useState('signs');
+  const router = useRouter();
+  const [actualPath, setPath] = useState('history');
   const [gameCase, setCase] = useState();
 
   useEffect(() => {
@@ -71,23 +72,56 @@ function Game() {
       left: '0',
       display: 'flex'
     }}>
-      <Signs
-        signs={gameCase.signs}
-        actualPath={actualPath}
-      />
+    
       <History
         histories={gameCase.histories}
         actualPath={actualPath}
-      />
+      >
+        <div style={{
+          textAlign: 'left',
+          position: 'absolute',
+          width: '40%',
+          top: '12%',
+          right: '56%',
+          color: 'white',
+          height: '77vh',
+          overflowY: 'scroll'
+          
+        }} dangerouslySetInnerHTML={{ __html: gameCase.description.replace(/\n/g, "<br />")}} />
+      </History>
       <Exams
         exams={gameCase.exams}
         actualPath={actualPath}
-      />
+      >
+        <div style={{
+          textAlign: 'left',
+          position: 'absolute',
+          width: '40%',
+          top: '12%',
+          right: '56%',
+          color: 'white',
+          height: '77vh',
+          overflowY: 'scroll'
+          
+        }} dangerouslySetInnerHTML={{ __html: gameCase.description.replace(/\n/g, "<br />")}} />
+      </Exams>
       <Answers
         answers={gameCase.answers}
         caseId={gameCase.id}
         actualPath={actualPath}
-      />
+      >
+        <div style={{
+          textAlign: 'left',
+          position: 'absolute',
+          width: '40%',
+          top: '12%',
+          right: '56%',
+          color: 'white',
+          height: '77vh',
+          overflowY: 'scroll'
+          
+        }} dangerouslySetInnerHTML={{ __html: gameCase.description.replace(/\n/g, "<br />")}} />
+      </Answers>
     </div>
     <div style={{
       display: 'flex',
@@ -97,11 +131,6 @@ function Game() {
       position:'absolute'
     }}>
       <div className="columns" style={{ width: '100vw' }}>
-        <div class="column flex">
-          <button class="button center" onClick={() => goTo('signs')}>
-            Sinais vitais
-          </button>
-        </div>
         <div class="column flex">
           <button class="button center" onClick={() => goTo('history')}>
             Histórico
@@ -115,6 +144,11 @@ function Game() {
         <div class="column flex">
           <button class="button center" onClick={() => goTo('answers')}>
             Responder
+          </button>
+        </div>
+        <div class="column flex">
+          <button class="button center" onClick={() => router.push({ pathname: '/select' })}>
+            Escolher outro caso
           </button>
         </div>
       </div>

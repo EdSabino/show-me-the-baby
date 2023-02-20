@@ -53,7 +53,7 @@ function Answers(props) {
               color: 'red'
             }
           }
-        >{answer.description}</span>
+          dangerouslySetInnerHTML={{ __html: answer.description.replace(/\n/g, "<br />")}} />
       </label>
       {Object.values(correctAnswers).length > 0 ? <div style={{ fontSize: '0.7rem', color: '#0ae50a', fontWeight: 'bold' }}>{correctAnswers[`id-${answer.id}`].reason}</div> : ''}
     </div>
@@ -71,7 +71,7 @@ function Answers(props) {
       width: 'auto',
     }} src="signs.png" />
     {
-      !!points && <div style={{
+      points === null ? props.children : <div style={{
         textAlign: 'left',
         position: 'absolute',
         width: '39%',

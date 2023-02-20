@@ -26,7 +26,8 @@ function Select() {
           <div
             style={{
               margin: 'auto',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              color: 'white'
             }}
           >
             { value.name }

@@ -23,7 +23,8 @@ function History(props) {
             })
         }
       </span>
-      <div className="is-6">{history.description}</div>
+      <div className="is-6"
+      dangerouslySetInnerHTML={{ __html: history.description.replace(/\n/g, "<br />")}} />
       <div style={{
         width: '100%',
         height: '1px',
@@ -44,6 +45,7 @@ function History(props) {
       height: '100%',
       width: 'auto',
     }} src="signs.png" />
+    {props.children}
     <div style={{
       textAlign: 'left',
       position: 'absolute',
