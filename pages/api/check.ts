@@ -17,11 +17,18 @@ export default async function handler(req, res) {
     };
 
     if (resulted.wasRight) {
-      points += 1;
-    } else {
-      points -= 1;
+      points += 2;
     }
     return resulted;
+  });
+
+  await prisma.game.update({
+    where: {
+      id: body.gameId
+    },
+    data: {
+      points,
+    },
   });
 
   return res

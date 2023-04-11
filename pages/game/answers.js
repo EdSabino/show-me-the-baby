@@ -15,7 +15,8 @@ function Answers(props) {
 
       const response = await axios.post('/api/check', {
         caseId: props.caseId,
-        answers: formattedAnswers
+        answers: formattedAnswers,
+        gameId: parseInt(localStorage.getItem('gameId')),
       });
 
       setPoints(response.data.points);

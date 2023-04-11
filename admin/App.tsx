@@ -34,11 +34,6 @@ const App = () => (
             list={AnswerList}
             edit={AnswerEdit}
         />
-
-        <Resource name="signs"
-            list={SignList}
-            edit={SignEdit}
-        />
     </Admin>
 );
 
