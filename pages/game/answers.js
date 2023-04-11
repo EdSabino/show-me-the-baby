@@ -30,11 +30,10 @@ function Answers(props) {
 
   const buildAnswers = () => {
     const answers = [];
-    for (let i = 0; i < props.answers?.length || 0; i = i + 2) {
+    for (let i = 0; i < props.answers?.length || 0; i++) {
       answers.push(
-        <div className="columns" style={{ paddingLeft: '15px' }}>
-          {buildAnswer(props.answers[i])}
-          {props.answers[i + 1] ? buildAnswer(props.answers[i + 1]) : ''}
+        <div className="columns" style={{ maxWidth: '99%', paddingLeft: '2px'}}>
+          {buildAnswer(props.answers[i], i)}
         </div>
       );
     }
@@ -42,20 +41,27 @@ function Answers(props) {
     return <>{answers}</>
   }
 
-  const buildAnswer = (answer) => {
+  const buildCorrectAnswers = () => {
+    const answers = [];
+    for (let correctAnswer of Object.values(correctAnswers)) {
+      answers.push(
+        <div className="columns" style={{ maxWidth: '99%', paddingLeft: '2px', marginBottom: '20px'}}>
+          {answers.length + 1} - {correctAnswer.reason}<br />
+        </div>
+      );
+    }
+
+    return <>{answers}</>
+  }
+
+  const buildAnswer = (answer, i) => {
     return <div className="column" style={{ padding: 10 }}>
       <label className="checkbox">
         <input id={`id-${answer.id}`} type="checkbox" style={{ marginRight: '5px' }} />
         <span
-          className="is-4"
-          style={
-            !correctAnswers?.[`id-${answer.id}`] || correctAnswers?.[`id-${answer.id}`]?.wasRight ? {} : {
-              color: 'red'
-            }
-          }
-          dangerouslySetInnerHTML={{ __html: answer.description.replace(/\n/g, "<br />")}} />
+          className={(!correctAnswers?.[`id-${answer.id}`] || correctAnswers?.[`id-${answer.id}`]?.wasRight) ? '' : 'wrong'}
+          dangerouslySetInnerHTML={{ __html: `${i + 1} - ${answer.description.replace(/\n/g, "<br />")}`}} />
       </label>
-      {Object.values(correctAnswers).length > 0 ? <div style={{ fontSize: '0.7rem', color: '#0ae50a', fontWeight: 'bold' }}>{correctAnswers[`id-${answer.id}`].reason}</div> : ''}
     </div>
   }
 
@@ -70,7 +76,7 @@ function Answers(props) {
       height: '100%',
       width: 'auto',
     }} src="signs.png" />
-    {
+    {/* {
       points === null ? props.children : <div style={{
         textAlign: 'left',
         position: 'absolute',
@@ -81,13 +87,13 @@ function Answers(props) {
       }}>
         <h3 className="title" style={{ marginBottom: '0' }}>Pontos: {points}</h3>
       </div>
-    }
+    } */}
     <div style={{
       textAlign: 'left',
       position: 'absolute',
       width: '39%',
       top: '14%',
-      left: '56%',
+      left: '5%',
       color: 'white'
     }}>
       <h3 className="title" style={{ marginBottom: '0' }}>Respostas</h3>
@@ -109,6 +115,26 @@ function Answers(props) {
           <button type="submit" className="button" style={{ marginTop: 'auto'}}>Continuar</button>
         </form>
       </div>
+    </div>
+    <div style={{
+      textAlign: 'left',
+      position: 'absolute',
+      width: '39%',
+      top: '14%',
+      left: '56%',
+      color: 'white'
+    }}>
+      <div style={{ fontSize: '2rem'}}>
+        
+        Pontos: {points}
+      </div>
+      <div style={{
+        width: '100%',
+        height: '1px',
+        backgroundColor: 'white',
+        marginBottom: '35px'
+      }}></div>
+      {buildCorrectAnswers()}
     </div>
   </div>);
 }

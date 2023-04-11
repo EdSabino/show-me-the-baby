@@ -1,6 +1,10 @@
 @import "~bulma/bulma.sass";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
+.wrong {
+  color: rgb(222, 18, 18) !important;
+  font-weight: bold;
+}
 
 body {
   padding: 0 !important;

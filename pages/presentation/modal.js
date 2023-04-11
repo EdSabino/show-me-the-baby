@@ -66,7 +66,7 @@ function Modal(props) {
               id="name"
               type="text"
               style={{
-                backgroundColor: '#BF8EA0',
+                backgroundColor: '#D8909C',
                 border: 'none',
                 width: '100%'
               }}

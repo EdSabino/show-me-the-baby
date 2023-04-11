@@ -20,7 +20,7 @@ function Start() {
       transform: 'translate(-50%, -50%)'
     }}>
       <form onSubmit={handleSubmit}>
-        <img src="./logo.png" width="300px" />
+        <img src="./logo2.png" width="300px" />
         
         <div style={{ display: 'flex', width: '100%', marginTop: '20px'}}>
           <Button type="submit" style={{ margin: 'auto'}}>Iniciar</Button>

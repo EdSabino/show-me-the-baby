@@ -4,7 +4,7 @@ export function Button(props) {
     onClick={props.onClick}
     className={'button ' + props.className}
     style={{
-      backgroundColor: '#BF8EA0',
+      backgroundColor: '#D8909C',
       color: 'white',
       borderRadius: '0.75rem',
       ...props.style
