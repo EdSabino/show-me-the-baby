@@ -1,14 +1,31 @@
 import { useRouter } from "next/router";
 import { Button } from "../../components/Button";
+import { useEffect, useState } from "react";
 
 function Start() {
   const router = useRouter();
+  const [ranks, setRanks] = useState([]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     router.push({
       pathname: '/presentation'
     });
+  }
+
+  useEffect(() => {
+    getRanks().then((body) => setRanks(body))
+  }, []);
+
+  const getRanks = async () => {
+    const response = await fetch('/api/get_ranks');
+    return response.json();
+  }
+
+  const renderRank = () => {
+    return ranks.map((rank, i) => {
+      return <li>{rank.name} - {rank.points}</li>
+    })
   }
 
   return <div style={{ height: '100vh', position: 'relative' }}>
@@ -26,6 +43,18 @@ function Start() {
           <Button type="submit" style={{ margin: 'auto'}}>Iniciar</Button>
         </div>
       </form>
+    </div>
+    <div style={{
+      position: 'absolute',
+      width: '20vw',
+      top: '10%',
+      right: '0',
+      height: '100vh'
+    }}>
+      <h2 style={{ color: 'black !important' }}>Ranking</h2>
+      <ol>
+        {renderRank()}
+      </ol>
     </div>
   </div>
 }
