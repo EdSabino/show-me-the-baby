@@ -65,8 +65,8 @@ function Answers(props) {
       <label className="checkbox">
         <input id={`id-${answer.id}`} type="checkbox" style={{ marginRight: '5px' }} />
         <span
-          className={(!correctAnswers?.[`id-${answer.id}`] || correctAnswers?.[`id-${answer.id}`]?.wasRight) ? '' : 'wrong'}
-          dangerouslySetInnerHTML={{ __html: `${i + 1} - ${answer.description.replace(/\n/g, "<br />")}`}} />
+          className={(!correctAnswers?.[`id-${answer.id}`] || correctAnswers?.[`id-${answer.id}`]?.wasRight) ? 'content' : 'content wrong'}
+          dangerouslySetInnerHTML={{ __html: `${i + 1} - ${answer.description}`}} />
       </label>
     </div>
   }
@@ -152,3 +152,5 @@ function Answers(props) {
 }
 
 export default Answers;
+
+

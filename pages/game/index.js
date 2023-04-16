@@ -77,7 +77,7 @@ function Game() {
         histories={gameCase.histories}
         actualPath={actualPath}
       >
-        <div style={{
+        <div class="content" style={{
           textAlign: 'left',
           position: 'absolute',
           width: '40%',
@@ -86,14 +86,14 @@ function Game() {
           color: 'white',
           height: '77vh',
           overflowY: 'scroll'
-        }} dangerouslySetInnerHTML={{ __html: gameCase.description.replace(/\n/g, "<br />")}} />
+        }} dangerouslySetInnerHTML={{ __html: gameCase.description }} />
       </History>
       <Answers
         answers={gameCase.answers}
         caseId={gameCase.id}
         actualPath={actualPath}
       >
-        <div style={{
+        <div class="content" style={{
           textAlign: 'left',
           position: 'absolute',
           width: '40%',
@@ -103,7 +103,7 @@ function Game() {
           height: '77vh',
           overflowY: 'scroll'
           
-        }} dangerouslySetInnerHTML={{ __html: gameCase.description.replace(/\n/g, "<br />")}} />
+        }} dangerouslySetInnerHTML={{ __html: gameCase.description }} />
       </Answers>
     </div>
     <div style={{

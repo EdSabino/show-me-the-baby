@@ -23,8 +23,8 @@ function History(props) {
             })
         }
       </span>
-      <div className="is-6"
-      dangerouslySetInnerHTML={{ __html: history.description.replace(/\n/g, "<br />")}} />
+      <div className="is-6 content"
+      dangerouslySetInnerHTML={{ __html: history.description }} />
       <div style={{
         width: '100%',
         height: '1px',
