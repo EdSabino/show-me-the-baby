@@ -4,9 +4,9 @@ export const AnswerEdit = () => (
     <Edit>
         <SimpleForm>
             <TextInput source="id" />
-            <TextInput source="description" />
+            <TextInput multiline fullWidth source="description" />
             <BooleanInput source="isCorrect" />
-            <TextInput source="reason" />
+            <TextInput multiline fullWidth source="reason" />
             <ReferenceInput source="caseId" reference="case" />
         </SimpleForm>
     </Edit>

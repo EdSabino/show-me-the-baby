@@ -5,7 +5,7 @@ export const HistoryEdit = () => (
         <SimpleForm>
             <TextInput source="id" />
             <TextInput source="date" />
-            <TextInput source="description" />
+            <TextInput multiline fullWidth source="description" />
             <ReferenceInput source="caseId" reference="case" />
         </SimpleForm>
     </Edit>
