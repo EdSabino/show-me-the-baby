@@ -7,7 +7,7 @@ import { PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER } from "next/dist/server/api
 
 const steps = [
   'Olá <name>, a seguir lhe apresentaremos 3 estudos de caso. Marque apenas as opções que você considera como verdadeiras.',
-  'Cada alternativa certa lhe dará 1 ponto. Cada alternativa errada, -1 ponto. Divirta-se!'
+  'Cada alternativa certa lhe dará 2 pontos. Divirta-se!'
 ];
 
 function Introduction() {

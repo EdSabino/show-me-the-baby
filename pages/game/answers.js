@@ -46,7 +46,7 @@ function Answers(props) {
     const answers = [];
     for (let correctAnswer of Object.values(correctAnswers)) {
       answers.push(
-        <div className="columns" style={{ maxWidth: '99%', paddingLeft: '2px', marginBottom: '20px'}}>
+        <div style={{ maxWidth: '99%', paddingLeft: '2px', marginBottom: '20px'}}>
           {answers.length + 1} - {correctAnswer.reason}<br />
         </div>
       );
@@ -97,7 +97,7 @@ function Answers(props) {
       left: '5%',
       color: 'white'
     }}>
-      <h3 className="title" style={{ marginBottom: '0' }}>Respostas</h3>
+      <h3 className="title" style={{ marginBottom: '0' }}>Assinale as alternativas verdadeiras</h3>
       <div style={{
         width: '100%',
         height: '1px',
@@ -135,7 +135,13 @@ function Answers(props) {
         backgroundColor: 'white',
         marginBottom: '35px'
       }}></div>
-      {buildCorrectAnswers()}
+      <div style={{
+        width: '100%',
+        height: '70vh',
+        overflowY: 'auto'
+      }}>
+        {buildCorrectAnswers()}
+      </div>
     </div>
   </div>);
 }

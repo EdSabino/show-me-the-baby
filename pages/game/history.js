@@ -63,6 +63,7 @@ function History(props) {
       }}></div>
       <div style={{
         width: '100%',
+        height: '70vh',
         overflowY: 'auto'
       }}>
         {buildHistories()}

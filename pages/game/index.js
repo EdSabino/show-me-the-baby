@@ -86,25 +86,8 @@ function Game() {
           color: 'white',
           height: '77vh',
           overflowY: 'scroll'
-          
         }} dangerouslySetInnerHTML={{ __html: gameCase.description.replace(/\n/g, "<br />")}} />
       </History>
-      <Exams
-        exams={gameCase.exams}
-        actualPath={actualPath}
-      >
-        <div style={{
-          textAlign: 'left',
-          position: 'absolute',
-          width: '40%',
-          top: '12%',
-          right: '56%',
-          color: 'white',
-          height: '77vh',
-          overflowY: 'scroll'
-          
-        }} dangerouslySetInnerHTML={{ __html: gameCase.description.replace(/\n/g, "<br />")}} />
-      </Exams>
       <Answers
         answers={gameCase.answers}
         caseId={gameCase.id}
