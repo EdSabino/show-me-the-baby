@@ -16,9 +16,11 @@ export default async function handler(req: any, res: any) {
         id: true,
         name: true,
         description: true,
-        signs: true,
-        histories: true,
-        exams: true,
+        histories: {
+          orderBy: {
+            date: 'asc'
+          }
+        },
         answers: {
           select: {
             id: true,
