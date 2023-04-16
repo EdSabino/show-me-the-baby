@@ -93,7 +93,7 @@ function Answers(props) {
       textAlign: 'left',
       position: 'absolute',
       width: '39%',
-      top: '14%',
+      top: '8%',
       left: '5%',
       color: 'white'
     }}>
