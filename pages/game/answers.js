@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Answers(props) {
   const [correctAnswers, setCorrectAnswers] = useState({});
@@ -20,6 +20,7 @@ function Answers(props) {
       });
 
       setPoints(response.data.points);
+      localStorage.setItem('points', response.data.points);
       setCorrectAnswers(response.data.correctAnswers.reduce((prev, next) => {
         prev[`id-${next.id}`] = next;
         return prev;
@@ -28,6 +29,10 @@ function Answers(props) {
       console.log(e);
     }
   }
+
+  useEffect(() => {
+    setPoints(parseInt(localStorage.getItem('points') || '0'));
+  }, []);
 
   const buildAnswers = () => {
     const answers = [];

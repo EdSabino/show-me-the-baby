@@ -7,8 +7,13 @@ export default async function handler(req, res) {
       caseId: body.caseId
     },
   });
+  const game = await prisma.game.findUnique({
+    where: {
+      id: body.gameId,
+    },
+  });
 
-  let points = 0;
+  let points = game?.points!;
   const result = body.answers.map((ans) => {
     const crrAnswer = correctAnswers.find((crrAns) => crrAns.id === ans.answerId);
     const resulted = {
