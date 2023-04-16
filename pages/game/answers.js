@@ -152,5 +152,3 @@ function Answers(props) {
 }
 
 export default Answers;
-
-

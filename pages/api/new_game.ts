@@ -29,6 +29,9 @@ export default async function handler(req: any, res: any) {
             reason: false
           }
         },
+      },
+      orderBy: {
+        name: 'asc'
       }
     });
 
