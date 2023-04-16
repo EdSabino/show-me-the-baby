@@ -137,11 +137,6 @@ function Game() {
           </button>
         </div>
         <div class="column flex">
-          <button class="button center" onClick={() => goTo('exams')}>
-            Exames
-          </button>
-        </div>
-        <div class="column flex">
           <button class="button center" onClick={() => goTo('answers')}>
             Responder
           </button>

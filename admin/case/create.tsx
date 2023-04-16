@@ -73,13 +73,6 @@ export const CaseCreate = (props: any) => {
       {buildHistoriesForm()}
 
       <div style={{ display: 'flex' }}>
-        <h3>Exames</h3>
-        <Button label="ADD exames" onClick={() => setExamsCount(examsCount + 1)} />
-      </div>
-      {buildExamsForm()}
-
-      
-      <div style={{ display: 'flex' }}>
         <h3>Respostas</h3>
         <Button label="ADD resposta" onClick={() => setAnswersCount(answersCount + 1)} />
       </div>
