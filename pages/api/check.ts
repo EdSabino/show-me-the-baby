@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     },
   });
 
-  let points = game?.points!;
+  let points = 0;
   const result = body.answers.map((ans) => {
     const crrAnswer = correctAnswers.find((crrAns) => crrAns.id === ans.answerId);
     const resulted = {
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       id: body.gameId
     },
     data: {
-      points,
+      points: game?.points! + points,
     },
   });
 
