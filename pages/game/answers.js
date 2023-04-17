@@ -60,7 +60,8 @@ function Answers(props) {
       <label className="checkbox">
         <input id={`id-${answer.id}`} type="checkbox" style={{ marginRight: '5px' }} />
         <span
-          className={(!correctAnswers?.[`id-${answer.id}`] || correctAnswers?.[`id-${answer.id}`]?.wasRight) ? 'content' : 'content wrong'}
+          className={(!correctAnswers?.[`id-${answer.id}`] || correctAnswers?.[`id-${answer.id}`]?.wasRight) ?
+            (points !== null ? 'content right' : 'content') : 'content wrong'}
           dangerouslySetInnerHTML={{ __html: `${i + 1} - ${answer.description}`}} />
       </label>
     </div>
@@ -118,10 +119,10 @@ function Answers(props) {
         scrollbarWidth: 'thin',
 
       }}>
-        <form onSubmit={handleSubmit}>
+        {points === null && <form onSubmit={handleSubmit}>
           {buildAnswers()}
           <button type="submit" className="button" style={{ marginTop: 'auto'}}>Continuar</button>
-        </form>
+        </form>}
       </div>
     </div>
     <div style={{
