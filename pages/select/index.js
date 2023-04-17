@@ -34,7 +34,7 @@ function Select() {
             <img
               className="img-hover"
               onClick={() => handleClick(i)}
-              src="folder1.png" />
+              src={`folder${i + 1}.png`} />
           </div>
         </div>
       );

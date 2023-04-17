@@ -66,6 +66,13 @@ function Answers(props) {
     </div>
   }
 
+  const getCurrentFace = () => {
+    if (points <= 4) return 'face-sad.png';
+    if (points <= 6) return 'face-med.png';
+    if (points <= 8) return 'face-happy.png';
+    return 'face-very-happy.png';
+  }
+
   return (<div style={{
     display: props.actualPath === 'answers' ? 'block' : 'none',
     marginLeft: 'auto',
@@ -125,9 +132,11 @@ function Answers(props) {
       left: '56%',
       color: 'white'
     }}>
-      <div style={{ fontSize: '2rem'}}>
-        
-        Pontos: {points}
+      <div style={{ fontSize: '2rem', marginBottom: '15px', display: 'flex' }}>
+        <span style={{ marginTop: '10px' }}>
+          Pontos: {points}
+        </span>
+        {points !== null && <img style={{ width: '60px', 'marginLeft': 'auto' }} src={getCurrentFace()} /> }
       </div>
       <div style={{
         width: '100%',
@@ -137,7 +146,7 @@ function Answers(props) {
       }}></div>
       <div style={{
         width: '100%',
-        height: '70vh',
+        height: '60vh',
         overflowY: 'auto'
       }}>
         {buildCorrectAnswers()}
