@@ -27,6 +27,9 @@ export default async function handler(req: any, res: any) {
             description: true,
             isCorrect: false,
             reason: false
+          },
+          orderBy: {
+            id: 'asc'
           }
         },
       },
