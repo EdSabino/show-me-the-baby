@@ -31,7 +31,7 @@ function Presentation() {
         <div className="column is-2" style={{
           marginRight: '20px'
         }}></div>
-        <Bubble className="column">Bem vindo ao jogo @feto, como posso lhe chamar?</Bubble>
+        <Bubble className="column">Bem vindo ao jogo @-feto, como posso lhe chamar?</Bubble>
         <Button className="column is-1" onClick={() => setOpen(true)} style={{
           paddingTop: '20px',
           paddingBottom: '20px',
