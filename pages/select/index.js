@@ -91,12 +91,14 @@ function Select() {
     }}>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(200px,1fr))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(250px,1fr))',
         gridGap: '0.5em',
         height: '100vh',
         paddingLeft: '50px'
       }}>
+        <div style={{ display: 'flex'}}></div>
         {buildCards()}
+        <div style={{ display: 'flex'}}></div>
       </div>
     </div>
   </div>;
