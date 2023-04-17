@@ -47,9 +47,8 @@ function Answers(props) {
     const answers = [];
     for (let correctAnswer of Object.values(correctAnswers)) {
       answers.push(
-        <div style={{ maxWidth: '99%', paddingLeft: '2px', marginBottom: '20px'}}>
-          {answers.length + 1} - {correctAnswer.reason}<br />
-        </div>
+        <div style={{ maxWidth: '99%', paddingLeft: '2px', marginBottom: '20px'}}
+          dangerouslySetInnerHTML={{ __html: `${answers.length + 1} - ${correctAnswer.reason}<br />`}} />
       );
     }
 
