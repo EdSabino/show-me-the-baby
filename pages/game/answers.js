@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Button } from "../../components/Button";
 
 function Answers(props) {
   const [correctAnswers, setCorrectAnswers] = useState({});
@@ -119,10 +120,10 @@ function Answers(props) {
         scrollbarWidth: 'thin',
 
       }}>
-        {points === null && <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           {buildAnswers()}
-          <button type="submit" className="button" style={{ marginTop: 'auto'}}>Continuar</button>
-        </form>}
+          {points === null &&  <Button type="submit" className="button" style={{ marginTop: 'auto'}}>Continuar</Button>}
+        </form>
       </div>
     </div>
     <div style={{
