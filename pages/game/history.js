@@ -1,41 +1,14 @@
+import { useEffect, useState } from "react";
+
 function History(props) {
-  const buildHistories = () => {
-    const histories = [];
-    props.histories?.forEach(history => {
-      histories.push(buildHistory(history));
-    });
-
-    return <>{histories}</>
-  }
-
-  const buildHistory = (history) => {
-    console.log(history.date)
-    return <>
-      <span className="title is-6">
-        {
-          new Date(history.date.replace(/(\d+[/])(\d+[/])/, '$2$1'))
-            .toLocaleString('pt-BR', {
-              year: 'numeric',
-              month: '2-digit',
-              day: '2-digit',
-              hour: '2-digit',
-              minute: '2-digit'
-            })
-        }
-      </span>
-      <div className="is-6 content"
-      dangerouslySetInnerHTML={{ __html: history.description }} />
-      <div style={{
-        width: '100%',
-        height: '1px',
-        backgroundColor: 'white',
-        marginBottom: '15px'
-      }}></div>
-    </>
-  }
+  const [currentCaseIndex, setCurrentCase] = useState(null);
+  useEffect(() => {
+    const actualCase = localStorage.getItem('actualCase');
+    setCurrentCase(parseInt(actualCase));
+  });
 
   return (<div style={{
-    display: props.actualPath === 'history' ? 'block' : 'none',
+    display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
     position: 'relative',
@@ -51,22 +24,20 @@ function History(props) {
       position: 'absolute',
       width: '35%',
       top: '14%',
-      left: '56%',
-      color: 'white'
+      left: '58%',
+      color: 'white',
     }}>
-      <h3 className="title" style={{ marginBottom: '0' }}>Histórico</h3>
-      <div style={{
-        width: '100%',
-        height: '1px',
-        backgroundColor: 'white',
-        marginBottom: '15px'
-      }}></div>
       <div style={{
         width: '100%',
         height: '70vh',
-        overflowY: 'auto'
+        display: 'flex'
       }}>
-        {buildHistories()}
+        <img style={{
+          width: '100%',
+          height: 'auto',
+          marginTop: 'auto',
+          marginBottom: 'auto'
+        }} src={`/gravida${currentCaseIndex + 1}.png`} />
       </div>
     </div>
   </div>);

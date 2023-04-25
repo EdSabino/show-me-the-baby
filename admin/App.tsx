@@ -7,7 +7,7 @@ import { AnswerList } from './answer.list';
 import { CaseList } from './case.list';
 import { CaseEdit } from './case/edit';
 import { HistoryEdit } from './history.edit';
-import { AnswerEdit } from './answer.edit';
+import { AnswerEdit, AnswerCreate } from './answer.edit';
 
 const App = () => (
     <Admin dataProvider={simpleRestProvider('/api/admin')}>
@@ -17,14 +17,9 @@ const App = () => (
             edit={CaseEdit}
         />
 
-        <Resource name="history"
-            list={HistoryList}
-            edit={HistoryEdit}
-            create={CaseCreate}
-        />
-
         <Resource name="answer"
             list={AnswerList}
+            create={AnswerCreate}
             edit={AnswerEdit}
         />
     </Admin>

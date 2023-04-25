@@ -16,17 +16,17 @@ export default async function handler(req: any, res: any) {
         id: true,
         name: true,
         description: true,
-        histories: {
-          orderBy: {
-            date: 'asc'
-          }
-        },
         answers: {
           select: {
             id: true,
             description: true,
-            isCorrect: false,
-            reason: false
+            isCorrect: true,
+            possibility1: true,
+            possibility2: true,
+            possibility3: true,
+            reason1: true,
+            reason2: true,
+            reason3: true,
           },
           orderBy: {
             id: 'asc'

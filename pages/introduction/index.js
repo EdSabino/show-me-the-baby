@@ -6,8 +6,7 @@ import { useState } from 'react';
 import { PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER } from "next/dist/server/api-utils";
 
 const steps = [
-  'Olá <name>, a seguir lhe apresentaremos 3 estudos de caso. Marque apenas as opções que você considera como verdadeiras.',
-  'Cada alternativa certa lhe dará 2 pontos. Divirta-se!'
+  'Olá <name>, a seguir lhe apresentaremos 3 estudos de caso. Marque apenas as opções que você considera como verdadeiras.'
 ];
 
 function Introduction() {
@@ -22,14 +21,10 @@ function Introduction() {
   }
 
   const advance = () => {
-    if (step === 1) {
-      router.push({
-        pathname: '/select'
-      });
-      return;
-    }
-
-    setStep(step + 1);
+    router.push({
+      pathname: '/select'
+    });
+    return;
   }
 
   return <div style={{ height: '100vh', position: 'relative' }}>

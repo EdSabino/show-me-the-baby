@@ -5,9 +5,12 @@ import ClipLoader from "react-spinners/ClipLoader";
 function Select() {
   const router = useRouter();
   const [cases, setCases] = useState([]);
+  const [solvedCases, setSolvedCases] = useState([]);
 
   useEffect(() => {
+    console.log('a', JSON.parse(localStorage.getItem('solvedCase') || '[]'))
     setCases(JSON.parse(localStorage.getItem('cases')));
+    setSolvedCases(JSON.parse(localStorage.getItem('solvedCase') || '[]'));
   }, []);
 
   const handleClick = (i) => {
@@ -26,14 +29,14 @@ function Select() {
           <div
             style={{
               margin: 'auto',
-              cursor: 'pointer',
+              cursor: solvedCases.includes(i) ? 'default' : 'pointer',
               color: 'white'
             }}
           >
             { value.name }
             <img
-              className="img-hover"
-              onClick={() => handleClick(i)}
+              className={solvedCases.includes(i) ? 'img-disabled' : "img-hover"}
+              onClick={() => !solvedCases.includes(i) && handleClick(i)}
               src={`folder${i + 1}.png`} />
           </div>
         </div>

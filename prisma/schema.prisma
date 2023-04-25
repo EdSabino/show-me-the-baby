@@ -15,47 +15,25 @@ datasource db {
 }
 
 model Case {
-  id          Int       @id @default(autoincrement())
-  name        String
-  description String
-  signs       Signs?
-  histories   History[]
-  exams       Exam[]
-  answers     Answer[]
+  id              Int      @id @default(autoincrement())
+  name            String
+  description     String
+  finalizeMessage String   @default("")
+  answers         Answer[]
 }
 
 model Answer {
-  id          Int     @id @default(autoincrement())
-  description String
-  isCorrect   Boolean
-  reason      String
-  caseId      Int
-  case        Case    @relation(fields: [caseId], references: [id], onDelete: Cascade)
-}
-
-model Exam {
-  id          Int    @id @default(autoincrement())
-  date        String
-  description String
-  caseId      Int
-  case        Case   @relation(fields: [caseId], references: [id], onDelete: Cascade)
-}
-
-model History {
-  id          Int    @id @default(autoincrement())
-  date        String
-  description String
-  caseId      Int
-  case        Case   @relation(fields: [caseId], references: [id], onDelete: Cascade)
-}
-
-model Signs {
-  id     Int    @id @default(autoincrement())
-  pulse  String
-  weigth Int
-  height Int
-  caseId Int    @unique
-  case   Case   @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  id           Int     @id @default(autoincrement())
+  description  String
+  isCorrect    Int
+  possibility1 String
+  possibility2 String
+  possibility3 String
+  reason1      String
+  reason2      String
+  reason3      String
+  caseId       Int
+  case         Case    @relation(fields: [caseId], references: [id], onDelete: Cascade)
 }
 
 model Game {

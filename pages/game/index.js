@@ -3,15 +3,11 @@ import { Bubble } from "../../components/Bubble";
 import { Button } from "../../components/Button";
 import { MdPlayArrow } from 'react-icons/md';
 import { useEffect, useState } from 'react';
-import Signs from "./signs";
-import Exams from "./exams";
 import History from "./history";
-import Answers from "./answers";
 import ClipLoader from "react-spinners/ClipLoader";
 
 function Game() {
   const router = useRouter();
-  const [actualPath, setPath] = useState('history');
   const [gameCase, setCase] = useState();
 
   useEffect(() => {
@@ -19,11 +15,9 @@ function Game() {
     setCase(JSON.parse(localStorage.getItem('cases'))[actualCase]);
   }, []);
   
-  function goTo(path) {
-    console.log(gameCase)
-    setPath(path);
+  function goTo() {
+    router.push('/game/questions/1');
   }
-
   
   if (!gameCase) {
     return <div style={{ height: '100vh', position: 'relative' }}>
@@ -52,6 +46,21 @@ function Game() {
         src="background-colorless.png" />
     </div>
     <div style={{
+      zIndex: '5',
+      position: 'absolute',
+      bottom: '30px',
+      right: '30px',
+    }}>
+      <Button onClick={goTo} style={{
+        paddingTop: '20px',
+        paddingBottom: '20px',
+        marginTop: 'auto',
+        marginLeft: '20px'
+      }}>
+        <MdPlayArrow size="40px" />
+      </Button>
+    </div>
+    <div style={{
       position: 'absolute',
       zIndex: '3',
       width: '100vw',
@@ -75,7 +84,6 @@ function Game() {
     
       <History
         histories={gameCase.histories}
-        actualPath={actualPath}
       >
         <div class="content" style={{
           textAlign: 'left',
@@ -88,48 +96,6 @@ function Game() {
           overflowY: 'scroll'
         }} dangerouslySetInnerHTML={{ __html: gameCase.description }} />
       </History>
-      <Answers
-        answers={gameCase.answers}
-        caseId={gameCase.id}
-        actualPath={actualPath}
-      >
-        <div class="content" style={{
-          textAlign: 'left',
-          position: 'absolute',
-          width: '40%',
-          top: '12%',
-          right: '56%',
-          color: 'white',
-          height: '77vh',
-          overflowY: 'scroll'
-          
-        }} dangerouslySetInnerHTML={{ __html: gameCase.description }} />
-      </Answers>
-    </div>
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      bottom: 10,
-      zIndex: 12,
-      position:'absolute'
-    }}>
-      <div className="columns" style={{ width: '100vw' }}>
-        <div class="column flex">
-          <button class="button center" onClick={() => goTo('history')}>
-            Histórico
-          </button>
-        </div>
-        <div class="column flex">
-          <button class="button center" onClick={() => goTo('answers')}>
-            Responder
-          </button>
-        </div>
-        <div class="column flex">
-          <button class="button center" onClick={() => router.push({ pathname: '/select' })}>
-            Escolher outro caso
-          </button>
-        </div>
-      </div>
     </div>
   </div>
 }

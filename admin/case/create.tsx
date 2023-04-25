@@ -46,9 +46,14 @@ export const CaseCreate = (props: any) => {
 
     for (let i = 0; i < answersCount; i++) {
       hist.push(<div key={`answers.${i}`}>
-        <BooleanInput label="Está certa?" source={`answers.createMany.data[${i}].isCorrect`}  />
+        <TextInput fullWidth source={`answers.createMany.data[${i}].possibility1`} />
+        <TextInput fullWidth source={`answers.createMany.data[${i}].reason1`} />
+        <TextInput fullWidth source={`answers.createMany.data[${i}].possibility2`} />
+        <TextInput fullWidth source={`answers.createMany.data[${i}].reason2`} />
+        <TextInput fullWidth source={`answers.createMany.data[${i}].possibility3`} />
+        <TextInput fullWidth source={`answers.createMany.data[${i}].reason3`} />
+        <NumberInput label="Resposta certa" source={`answers.createMany.data[${i}].isCorrect`}  />
         <TextInput style={{ marginLeft: '20px' }} multiline label="Descrição" source={`answers.createMany.data[${i}].description`}  />
-        <TextInput style={{ marginLeft: '20px' }} multiline label="Justificativa" source={`answers.createMany.data[${i}].reason`}  />
       </div>)
     }
 
@@ -59,12 +64,6 @@ export const CaseCreate = (props: any) => {
     <SimpleForm>
       <TextInput label="Nome" source="name" />
       <TextInput multiline fullWidth label="Descrição" source="description" />
-
-      <div style={{ display: 'flex' }}>
-        <h3>Hiistorico</h3>
-        <Button label="ADD historico" onClick={() => setHistoriesCount(historiesCount + 1)} />
-      </div>
-      {buildHistoriesForm()}
 
       <div style={{ display: 'flex' }}>
         <h3>Respostas</h3>

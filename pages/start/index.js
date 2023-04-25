@@ -8,19 +8,20 @@ function Start() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    localStorage.setItem('solvedCase', '[]')
     router.push({
       pathname: '/presentation'
     });
   }
 
-  useEffect(() => {
-    getRanks().then((body) => setRanks(body))
-  }, []);
+  // useEffect(() => {
+  //   getRanks().then((body) => setRanks(body))
+  // }, []);
 
-  const getRanks = async () => {
-    const response = await fetch('/api/get_ranks');
-    return response.json();
-  }
+  // const getRanks = async () => {
+  //   const response = await fetch('/api/get_ranks');
+  //   return response.json();
+  // }
 
   const renderRank = () => {
     return ranks.map((rank, i) => {
@@ -44,7 +45,7 @@ function Start() {
         </div>
       </form>
     </div>
-    <div style={{
+    {/* <div style={{
       position: 'absolute',
       width: '20vw',
       top: '10%',
@@ -55,7 +56,7 @@ function Start() {
       <ol>
         {renderRank()}
       </ol>
-    </div>
+    </div> */}
   </div>
 }
 

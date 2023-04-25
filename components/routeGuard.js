@@ -7,12 +7,12 @@ function RouteGuard({ children }) {
 
   useEffect(() => {
     const gameId = localStorage.getItem('gameId');
-
+    console.log(router.asPath, gameId)
     if (freeRoutes.includes(router.asPath) || router.asPath.includes('/admin')) {
       return;
     }
 
-    if (!gameId || !['/game', '/introduction', '/select'].includes(router.asPath)) {
+    if (!gameId || !['/game', '/introduction', '/select', '/game/finalize', '/game/questions/[id]'].includes(router.asPath)) {
       router.push({
         pathname: '/start'
       });

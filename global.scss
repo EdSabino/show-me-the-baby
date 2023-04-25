@@ -48,6 +48,10 @@ body {
   display: flex;
 }
 
+.img-disabled {
+  filter: grayscale(100%);
+}
+
 .img-hover {
   filter: grayscale(100%);
 }
