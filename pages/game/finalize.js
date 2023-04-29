@@ -29,54 +29,52 @@ function Finalize() {
         src="/background-presentation.png" />
     </div>
     <div style={{
-        position: 'absolute',
-        width: '100vw',
-        height: '100vh',
-        zIndex: '10',
-        backgroundColor: 'black',
-        opacity: '0.6'
-      }}></div>
-    <div style={{
       position: 'absolute',
-      padding: '30px',
-      left: 0,
-      top: 0,
-      zIndex: '20',
       width: '100vw',
       height: '100vh',
-      display: 'flex',
-      flexDirection: 'column'
+      zIndex: '10',
+      backgroundColor: 'black',
+      opacity: '0.6'
+    }}></div>
+    <div style={{
+      position: 'absolute',
+      top: '0',
+      height: '100vh',
+      width: '100vw',
+      overflow: 'hidden',
+      zIndex: '15',
+      display: 'flex'
     }}>
-      <div className="columns" style={{
-        marginTop: 'auto',
-        marginBottom: 'auto',
-      }}>
-        <div className="column is-half" style={{ display: 'flex', flexDirection: 'column' }}>
-          <Bubble style={{ marginBottom: 'auto', marginTop: 'auto' }}>{currentCase.finalizeMessage}</Bubble>
-        </div>
-        <div className="column is-half" style={{display: 'flex'}}>
-        <img style={{
-          width: '100%',
-          height: 'auto',
+      <img
+        style={{
+          margin: 'auto',
+          height: '90vh'
+        }}
+        src={`/mother${currentCaseIndex + 1}.png`} />
+    </div>
+    <div style={{
+      zIndex: '5',
+      position: 'absolute',
+      bottom: '15vh',
+      left: '50%',
+      msTransform: 'translate(-50%)',
+      transform: 'translate(-50%)',
+      width: '50vw',
+      zIndex: '20'
+    }}>
+      <div className="columns" style={{ width: '50vw' }}>
+        <div className="column is-2" style={{
+          marginRight: '20px'
+        }}></div>
+        <Bubble className="column">{currentCase.finalizeMessage}</Bubble>
+        <Button className="column is-1" onClick={() => router.push('/select')} style={{
+          paddingTop: '20px',
+          paddingBottom: '20px',
           marginTop: 'auto',
-          marginBottom: 'auto'
-        }} src={`/gravida${currentCaseIndex + 1}.png`} />
-        </div>
-        <div style={{
-          zIndex: '5',
-          position: 'absolute',
-          bottom: '30px',
-          right: '30px',
+          marginLeft: '20px'
         }}>
-          <Button onClick={() => router.push('/select')} style={{
-            paddingTop: '20px',
-            paddingBottom: '20px',
-            marginTop: 'auto',
-            marginLeft: '20px'
-          }}>
-            <MdPlayArrow size="40px" />
-          </Button>
-        </div>
+          <MdPlayArrow size="40px" style={{ marginTop: '-20px', marginLeft: '-5px'}} />
+        </Button>
       </div>
     </div>
   </div>

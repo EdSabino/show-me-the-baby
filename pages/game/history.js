@@ -22,9 +22,9 @@ function History(props) {
     <div style={{
       textAlign: 'left',
       position: 'absolute',
-      width: '35%',
-      top: '14%',
-      left: '58%',
+      width: '48%',
+      bottom: '6.5%',
+      left: '50%',
       color: 'white',
     }}>
       <div style={{

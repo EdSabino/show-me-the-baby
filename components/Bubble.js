@@ -1,10 +1,13 @@
 export function Bubble(props) {
+  const error = props.error || false;
+
   return <div
     className={props.className}
     style={{
-      backgroundColor: '#9DCA8C',
+      backgroundColor: error ? '#CA8C8C' : '#9DCA8C',
       color: 'white',
-      borderRadius: '0.75rem',
+      fontWeight: 'bold',
+      borderRadius: '1rem',
       padding: '20px',
       width: '100%',
       borderColor: '#9DCA8C',

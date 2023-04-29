@@ -7,9 +7,9 @@ export function Button(props) {
     className={'button ' + props.className}
     disabled={props.disabled || false}
     style={{
-      backgroundColor: error ? '#BF8EA0' : '#9DCA8C',
+      backgroundColor: error ? '#CA8C8C' : '#9DCA8C',
       color: 'white',
-      borderRadius: '0.75rem',
+      borderRadius: '1rem',
       borderColor: '#9DCA8C',
       ...props.style
     }}

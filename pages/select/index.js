@@ -29,14 +29,14 @@ function Select() {
           <div
             style={{
               margin: 'auto',
-              cursor: solvedCases.includes(i) ? 'default' : 'pointer',
+              cursor: 'pointer',
               color: 'white'
             }}
           >
             { value.name }
             <img
-              className={solvedCases.includes(i) ? 'img-disabled' : "img-hover"}
-              onClick={() => !solvedCases.includes(i) && handleClick(i)}
+              className="img-hover"
+              onClick={() => handleClick(i)}
               src={`folder${i + 1}.png`} />
           </div>
         </div>

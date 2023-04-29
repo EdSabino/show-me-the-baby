@@ -11,6 +11,7 @@ function Questions() {
   const [reason, setReason] = useState(null);
   const [success, setSuccess] = useState(false);
   const [clicked, setClicked] = useState([]);
+  const [currentClicked, setCurrentClicked] = useState(0);
 
   useEffect(() => {
     const actualCase = localStorage.getItem('actualCase');
@@ -25,6 +26,7 @@ function Questions() {
   }, [currentCase, router.query.id]);
 
   const choose = (i) => {
+    setCurrentClicked(i);
     if (i === answer.isCorrect) {
       setSuccess(true);
     }
@@ -100,7 +102,7 @@ function Questions() {
           </div>
         </div>
         {reason && <div className="column is-half" style={{display: 'flex'}}>
-          <Bubble className="column is-full" style={{ marginTop: 'auto', marginBottom: 'auto' }}>{reason}</Bubble>
+          <Bubble className="column is-full" style={{ marginTop: 'auto', marginBottom: 'auto' }} error={answer.isCorrect !== currentClicked}>{reason}</Bubble>
         </div>}
         {success && <div style={{
           zIndex: '5',
