@@ -8,9 +8,10 @@ import { CaseList } from './case.list';
 import { CaseEdit } from './case/edit';
 import { HistoryEdit } from './history.edit';
 import { AnswerEdit, AnswerCreate } from './answer.edit';
+import { authProvider } from './authProvider';
 
 const App = () => (
-    <Admin dataProvider={simpleRestProvider('/api/admin')}>
+    <Admin dataProvider={simpleRestProvider('/api/admin')} authProvider={authProvider} requireAuth>
         <Resource name="case"
             list={CaseList}
             create={CaseCreate}
