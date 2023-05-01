@@ -48,11 +48,6 @@ function Modal(props) {
         transform: 'translate(-50%, -50%)',
         zIndex: '12'
       }}>
-        <div className="columns">
-          <Bubble className="column" style={{
-            width: '50vw',
-          }}>Qual seu nome?</Bubble>
-        </div>
         <div className="columns" style={{
           marginTop: '35px',
           width: '30vw',
@@ -70,7 +65,7 @@ function Modal(props) {
                 border: 'none',
                 width: '100%'
               }}
-              placeholder="Insira seu nome"
+              placeholder="Qual seu nome?"
             />
           </Bubble>
           <Button type="submit" className="column is-2" style={{

@@ -39,7 +39,7 @@ function Questions() {
     setSuccess(false);
     setClicked([]);
     setReason(null);
-    if (index === 3) {
+    if (index === 5) {
       const actualCase = localStorage.getItem('actualCase');
       const solvedCases = JSON.parse(localStorage.getItem('solvedCase') || '[]');
       localStorage.setItem('solvedCase', JSON.stringify([...solvedCases, parseInt(actualCase)]))

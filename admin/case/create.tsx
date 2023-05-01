@@ -64,6 +64,7 @@ export const CaseCreate = (props: any) => {
     <SimpleForm>
       <TextInput label="Nome" source="name" />
       <TextInput multiline fullWidth label="Descrição" source="description" />
+      <TextInput multiline fullWidth label="Finalização" source="finalizeMessage" />
 
       <div style={{ display: 'flex' }}>
         <h3>Respostas</h3>

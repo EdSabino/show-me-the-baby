@@ -3,10 +3,9 @@ import { Bubble } from "../../components/Bubble";
 import { Button } from "../../components/Button";
 import { MdAccountBalanceWallet, MdCatchingPokemon, MdPlayArrow } from 'react-icons/md';
 import { useState } from 'react';
-import { PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER } from "next/dist/server/api-utils";
 
 const steps = [
-  'Olá <name>, a seguir lhe apresentaremos 3 estudos de caso. Marque apenas as opções que você considera como verdadeiras.'
+  'Olá! A seguir lhe apresentaremos 3 estudos de caso. Marque apenas as opções que você considera como verdadeiras.'
 ];
 
 function Introduction() {

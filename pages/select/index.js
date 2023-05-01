@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
+import { Button } from "../../components/Button";
 
 function Select() {
   const router = useRouter();
@@ -17,6 +18,12 @@ function Select() {
     localStorage.setItem('actualCase', i);
     router.push({
       pathname: '/game'
+    });
+  }
+
+  const goToReferences = () => {
+    router.push({
+      pathname: '/references'
     });
   }
 
@@ -84,6 +91,21 @@ function Select() {
       left: '0',
       overflow: 'hidden'
     }}></div>
+    <div style={{
+      zIndex: '5',
+      position: 'absolute',
+      bottom: '30px',
+      right: '30px',
+    }}>
+      <Button onClick={goToReferences} style={{
+        paddingTop: '20px',
+        paddingBottom: '20px',
+        marginTop: 'auto',
+        marginLeft: '20px'
+      }}>
+        Consultar referencias
+      </Button>
+    </div>
     <div style={{
       position: 'absolute',
       zIndex: '4',
