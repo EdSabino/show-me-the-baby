@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Bubble } from '../../../components/Bubble';
 import { Button } from '../../../components/Button';
 import { MdPlayArrow } from 'react-icons/md';
+import parse from 'html-react-parser';
 
 function Questions() {
   const router = useRouter();
@@ -79,7 +80,8 @@ function Questions() {
       width: '100vw',
       height: '100vh',
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      overflowY: 'auto'
     }}>
       <div className="columns" style={{
         marginTop: 'auto',
@@ -88,16 +90,16 @@ function Questions() {
         <div className="column is-half">
           <div className="columns is-multiline is-3">
             <div className="column is-full">
-              <Bubble>{answer.description}</Bubble>
+              <Bubble>{parse(answer.description)}</Bubble>
             </div>
             <div className="column is-full">
-              <Button style={{ width: '100%' }} disabled={clicked.includes(1)} error={1 !== answer.isCorrect && clicked.includes(1)} onClick={() => choose(1)}>{answer.possibility1}</Button>
+              <Button style={{ width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(1)} error={1 !== answer.isCorrect && clicked.includes(1)} onClick={() => choose(1)}>{parse(answer.possibility1)}</Button>
             </div>
             <div className="column is-full">
-              <Button style={{ width: '100%' }} disabled={clicked.includes(2)} error={2 !== answer.isCorrect && clicked.includes(2)} onClick={() => choose(2)}>{answer.possibility2}</Button>
+              <Button style={{ width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(2)} error={2 !== answer.isCorrect && clicked.includes(2)} onClick={() => choose(2)}>{parse(answer.possibility2)}</Button>
             </div>
             <div className="column is-full">
-              <Button style={{ width: '100%' }} disabled={clicked.includes(3)} error={3 !== answer.isCorrect && clicked.includes(3)} onClick={() => choose(3)}>{answer.possibility3}</Button>
+              <Button style={{ width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(3)} error={3 !== answer.isCorrect && clicked.includes(3)} onClick={() => choose(3)}>{parse(answer.possibility3)}</Button>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ function Select() {
 
     cases.forEach((value, i) => {
       cards.push(
-        <div style={{ display: 'flex'}}>
+        <div class="column" style={{ display: 'flex'}}>
           <div
             style={{
               margin: 'auto',
@@ -114,16 +114,13 @@ function Select() {
       bottom: '0',
       left: '0',
     }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(250px,1fr))',
+      <div className="columns" style={{
         gridGap: '0.5em',
         height: '100vh',
-        paddingLeft: '50px'
       }}>
-        <div style={{ display: 'flex'}}></div>
+        <div class="column"></div>
         {buildCards()}
-        <div style={{ display: 'flex'}}></div>
+        <div class="column"></div>
       </div>
     </div>
   </div>;

@@ -10,7 +10,7 @@ export function Button(props) {
       backgroundColor: error ? '#CA8C8C' : '#9DCA8C',
       color: 'white',
       borderRadius: '1rem',
-      borderColor: '#9DCA8C',
+      borderColor: error ? '#CA8C8C' : '#9DCA8C',
       ...props.style
     }}
   >

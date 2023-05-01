@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Bubble } from '../../components/Bubble';
 import { Button } from '../../components/Button';
 import { MdPlayArrow } from 'react-icons/md';
+import parse from 'html-react-parser';
 
 function Finalize() {
   const router = useRouter();
@@ -56,17 +57,12 @@ function Finalize() {
       zIndex: '5',
       position: 'absolute',
       bottom: '15vh',
-      left: '50%',
-      msTransform: 'translate(-50%)',
-      transform: 'translate(-50%)',
-      width: '50vw',
-      zIndex: '20'
+      zIndex: '20',
+      left: '5vw',
+      width: '90vw'
     }}>
-      <div className="columns" style={{ width: '50vw' }}>
-        <div className="column is-2" style={{
-          marginRight: '20px'
-        }}></div>
-        <Bubble className="column">{currentCase.finalizeMessage}</Bubble>
+      <div className="columns">
+        <Bubble className="column">{parse(currentCase.finalizeMessage)}</Bubble>
         <Button className="column is-1" onClick={() => router.push('/select')} style={{
           paddingTop: '20px',
           paddingBottom: '20px',

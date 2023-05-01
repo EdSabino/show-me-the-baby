@@ -16,6 +16,7 @@ export default async function handler(req: any, res: any) {
         id: true,
         name: true,
         description: true,
+        finalizeMessage: true,
         answers: {
           select: {
             id: true,
