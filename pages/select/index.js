@@ -9,7 +9,6 @@ function Select() {
   const [solvedCases, setSolvedCases] = useState([]);
 
   useEffect(() => {
-    console.log('a', JSON.parse(localStorage.getItem('solvedCase') || '[]'))
     setCases(JSON.parse(localStorage.getItem('cases')));
     setSolvedCases(JSON.parse(localStorage.getItem('solvedCase') || '[]'));
   }, []);
@@ -103,7 +102,7 @@ function Select() {
         marginTop: 'auto',
         marginLeft: '20px'
       }}>
-        Consultar referencias
+        Consultar referências
       </Button>
     </div>
     <div style={{
