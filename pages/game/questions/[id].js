@@ -90,16 +90,16 @@ function Questions() {
         <div className="column is-half">
           <div className="columns is-multiline is-3">
             <div className="column is-full">
-              <Bubble>{parse(answer.description)}</Bubble>
+              <Bubble style={{ border: '2px solid white'}}>{parse(answer.description)}</Bubble>
             </div>
             <div className="column is-full">
-              <Button style={{ width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(1)} error={1 !== answer.isCorrect && clicked.includes(1)} onClick={() => choose(1)}>{parse(answer.possibility1)}</Button>
+              <Button style={{ fontWeight: 'bold', width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(1)} error={1 !== answer.isCorrect && clicked.includes(1)} onClick={() => choose(1)}>{parse(answer.possibility1)}</Button>
             </div>
             <div className="column is-full">
-              <Button style={{ width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(2)} error={2 !== answer.isCorrect && clicked.includes(2)} onClick={() => choose(2)}>{parse(answer.possibility2)}</Button>
+              <Button style={{ fontWeight: 'bold', width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(2)} error={2 !== answer.isCorrect && clicked.includes(2)} onClick={() => choose(2)}>{parse(answer.possibility2)}</Button>
             </div>
             <div className="column is-full">
-              <Button style={{ width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(3)} error={3 !== answer.isCorrect && clicked.includes(3)} onClick={() => choose(3)}>{parse(answer.possibility3)}</Button>
+              <Button style={{ fontWeight: 'bold', width: '100%', wordWrap: 'break-word', whiteSpace: 'pre-wrap', padding: '50px', }} disabled={clicked.includes(3)} error={3 !== answer.isCorrect && clicked.includes(3)} onClick={() => choose(3)}>{parse(answer.possibility3)}</Button>
             </div>
           </div>
         </div>
