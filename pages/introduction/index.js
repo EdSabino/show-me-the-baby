@@ -74,7 +74,11 @@ function Introduction() {
         <div className="column is-2" style={{
           marginRight: '20px'
         }}></div>
-        <Bubble className="column">{talk()}</Bubble>
+        <Bubble className="column" style={{ fontWeight: 'bold', textAlign: 'center' }}>
+          Olá! O jogo apresenta casos clínicos de gestantes com transtorno materno hipertensivo, insuficiência istmocervical e infecção do trato urinário.<br />
+          Você deverá marcar a opção que considera verdadeira.<br />
+          Vamos começar?<br />
+        </Bubble>
         <Button className="column is-1" onClick={() => advance()} style={{
           paddingTop: '20px',
           paddingBottom: '20px',

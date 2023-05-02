@@ -22,16 +22,16 @@ function Presentation() {
     <div style={{
       position: 'absolute',
       bottom: '30px',
-      left: '50%',
-      msTransform: 'translate(-50%)',
-      transform: 'translate(-50%)',
-      width: '50vw'
+      width: '100vw',
     }}>
-      <div className="columns" style={{ width: '50vw' }}>
-        <div className="column is-2" style={{
-          marginRight: '20px'
-        }}></div>
-        <Bubble className="column">Bem vindo ao jogo @-feto. Como posso lhe chamar?</Bubble>
+      <div className="columns"  style={{ width: '90vw', margin: 'auto' }}>
+        <div className="column is-1"></div>
+        <Bubble className="column" style={{ fontWeight: 'bold', textAlign: 'center' }}>
+          Bem-vindo ao jogo @-feto!<br />
+          Esse jogo tem o objetivo de sensibilizar e familiarizar os enfermeiros quanto a identificação precoce de fatores de risco e intervenções adequadas na gestação, buscando reduzir a mortalidade neonatal precoce.<br />
+          O jogador deve assumir o papel do enfermeiro na Atenção Primária à Saúde, e através de seus conhecimentos e habilidades no cuidado pré-natal, deve tomar decisões corretas para uma adequada assistência à gestante.<br />
+          Desejamos uma experiência valiosa!
+        </Bubble>
         <Button className="column is-1" onClick={() => setOpen(true)} style={{
           paddingTop: '20px',
           paddingBottom: '20px',
