@@ -1,12 +1,14 @@
 import { useRouter } from "next/router";
 import { Button } from "../../components/Button";
 import { useEffect, useState } from "react";
+import { log } from `next-axiom`;
 
 function Start() {
   const router = useRouter();
   const [ranks, setRanks] = useState([]);
 
   const handleSubmit = async (event) => {
+    log.info('Game started');
     event.preventDefault();
     localStorage.setItem('solvedCase', '[]')
     router.push({

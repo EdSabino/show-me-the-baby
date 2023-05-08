@@ -4,6 +4,7 @@ import { Bubble } from '../../../components/Bubble';
 import { Button } from '../../../components/Button';
 import { MdPlayArrow } from 'react-icons/md';
 import parse from 'html-react-parser';
+import { log } from `next-axiom`;
 
 function Questions() {
   const router = useRouter();
@@ -27,9 +28,14 @@ function Questions() {
   }, [currentCase, router.query.id]);
 
   const choose = (i) => {
+    const gameId = localStorage.getItem('gameId');
+    const logger = log.with({ gameId, currentCase, answer });
     setCurrentClicked(i);
     if (i === answer.isCorrect) {
+      logger.info(`success - ${i}`);
       setSuccess(true);
+    } else {
+      logger.info(`failure - ${i}`);
     }
     setReason(answer[`reason${i}`]);
     setClicked([...clicked, i]);

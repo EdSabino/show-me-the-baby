@@ -20,6 +20,7 @@
     "html-react-parser": "^3.0.16",
     "jsonwebtoken": "^9.0.0",
     "next": "^12.1.6",
+    "next-axiom": "^0.17.0",
     "ra-data-simple-rest": "^4.3.0",
     "react": "^18.1.0",
     "react-admin": "^4.3.0",
