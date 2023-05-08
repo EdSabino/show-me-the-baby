@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { Button } from "../../components/Button";
 import { useEffect, useState } from "react";
-import { log } from 'next-axiom';
+import { log } from "../../lib/logger";
 
 function Start() {
   const router = useRouter();
