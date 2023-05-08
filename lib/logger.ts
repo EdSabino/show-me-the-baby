@@ -155,7 +155,7 @@ export class Logger {
       'Content-Type': 'application/json',
       'User-Agent': 'next-axiom/v1.0.0',
     };
-    headers['Authorization'] = `Bearer NEXT_PUBLIC_AXIOM_TOKEN`;
+    headers['Authorization'] = `Bearer ${process.env.NEXT_PUBLIC_AXIOM_TOKEN}`;
     const reqOptions: RequestInit = { body, method, keepalive, headers };
 
     function sendFallback() {
