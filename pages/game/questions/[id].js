@@ -4,7 +4,7 @@ import { Bubble } from '../../../components/Bubble';
 import { Button } from '../../../components/Button';
 import { MdPlayArrow } from 'react-icons/md';
 import parse from 'html-react-parser';
-import { log } from `next-axiom`;
+import { log } from 'next-axiom';
 
 function Questions() {
   const router = useRouter();
