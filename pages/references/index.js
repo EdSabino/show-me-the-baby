@@ -79,3 +79,5 @@ function References() {
     </div>
   </div>;
 }
+
+export default References;
