@@ -12,7 +12,7 @@ function RouteGuard({ children }) {
       return;
     }
 
-    if (!gameId || !['/game', '/introduction', '/select', '/game/finalize', '/game/questions/[id]', '/references'].includes(router.asPath)) {
+    if (!gameId || !['/game', '/introduction', '/select', '/game/finalize', '/game/questions/[id]', '/references', '/info'].includes(router.asPath)) {
       router.push({
         pathname: '/start'
       });

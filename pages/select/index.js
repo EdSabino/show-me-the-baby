@@ -17,12 +17,20 @@ function Select() {
     localStorage.setItem('actualCase', i);
     router.push({
       pathname: '/game'
+      
     });
   }
 
   const goToReferences = () => {
     router.push({
       pathname: '/references'
+    });
+  }
+
+  const goToInfo = (i) => {
+    router.push({
+      pathname: '/info',
+      query: { index: i}
     });
   }
 
@@ -93,17 +101,49 @@ function Select() {
     <div style={{
       zIndex: '5',
       position: 'absolute',
+      width: 'calc(100vw - 60px)',
       bottom: '30px',
       right: '30px',
     }}>
-      <Button onClick={goToReferences} style={{
-        paddingTop: '20px',
-        paddingBottom: '20px',
-        marginTop: 'auto',
-        marginLeft: '20px'
+      <div style={{ color: 'white', fontWeight: 'bold', fontSize: '1.2rem'}}>Saiba mais</div>
+      <div style={{ backgroundColor: 'white', height: '1px', width: '100%', marginBottom: '12px' }}></div>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-evenly',
       }}>
-        Consultar referências
-      </Button>
+        <Button error={true} onClick={() => goToInfo(1)} style={{
+          paddingTop: '20px',
+          paddingBottom: '20px',
+          marginTop: 'auto',
+          marginLeft: '20px',
+        }}>
+          Transtorno Materno Hipertensivo
+        </Button>
+        <Button error={true} onClick={() => goToInfo(2)} style={{
+          paddingTop: '20px',
+          paddingBottom: '20px',
+          marginTop: 'auto',
+          marginLeft: '20px'
+        }}>
+          Insuficiência Istmocervical
+        </Button>
+        <Button error={true} onClick={() => goToInfo(3)} style={{
+          paddingTop: '20px',
+          paddingBottom: '20px',
+          marginTop: 'auto',
+          marginLeft: '20px'
+        }}>
+          Infecção do Trato urinário
+        </Button>
+        <Button onClick={goToReferences} style={{
+          paddingTop: '20px',
+          paddingBottom: '20px',
+          marginTop: 'auto',
+          marginLeft: '20px'
+        }}>
+          Consultar referências
+        </Button>
+      </div>
     </div>
     <div style={{
       position: 'absolute',
