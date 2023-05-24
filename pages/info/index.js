@@ -11,7 +11,7 @@ function Info() {
     })
   }
 
-  return <div style={{ height: '100vh', width: '100vw' }}>
+  return <div style={{ height: '100vh', width: '100vw', display: 'flex' }}>
     <div style={{
       zIndex: '5',
       position: 'absolute',
@@ -27,7 +27,7 @@ function Info() {
         <MdKeyboardArrowLeft size="40px" />
       </Button>
     </div>
-    <img src={`./info-${router.query.index}.png`} />
+    <img src={`./info-${router.query.index}.png`} style={{ height: '100vh', objectFit: 'cover', marginRight: 'auto', marginLeft: 'auto' }} />
   </div>
 }
 

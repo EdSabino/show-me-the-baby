@@ -1,18 +1,18 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-const freeRoutes = ['/start', '/presentation'];
+const freeRoutes = ['/start', '/presentation', '/info'];
 function RouteGuard({ children }) {
   const router = useRouter();
 
   useEffect(() => {
     const gameId = localStorage.getItem('gameId');
-    console.log(router.asPath, gameId)
-    if (freeRoutes.includes(router.asPath) || router.asPath.includes('/admin')) {
+    console.log(router.pathname, gameId)
+    if (freeRoutes.includes(router.pathname) || router.pathname.includes('/admin')) {
       return;
     }
 
-    if (!gameId || !['/game', '/introduction', '/select', '/game/finalize', '/game/questions/[id]', '/references', '/info'].includes(router.asPath)) {
+    if (!gameId || !['/game', '/introduction', '/select', '/game/finalize', '/game/questions/[id]', '/references'].includes(router.asPath)) {
       router.push({
         pathname: '/start'
       });
