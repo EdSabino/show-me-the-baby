@@ -75,8 +75,8 @@ function Introduction() {
           marginRight: '20px'
         }}></div>
         <Bubble className="column" style={{ fontWeight: 'bold', textAlign: 'center' }}>
-          Olá! O jogo apresenta casos clínicos de gestantes com transtorno materno hipertensivo, insuficiência istmocervical e infecção do trato urinário.<br />
-          Você deverá marcar a opção que considera verdadeira.<br />
+          O jogo apresenta casos clínicos de gestantes com transtorno materno hipertensivo, insuficiência istmocervical e infecção do trato urinário.<br />
+          Na dinâmica do jogo, serão apresentadas cinco questões para cada caso, com alternativas de múltipla escolha, nas quais você deverá assinalar aquela que considera verdadeira. É importante que analise cuidadosamente cada opção antes de fazer sua escolha.<br />
           Vamos começar?<br />
         </Bubble>
         <Button className="column is-1" onClick={() => advance()} style={{
