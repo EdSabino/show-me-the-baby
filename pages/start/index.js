@@ -34,6 +34,13 @@ function Start() {
   return <div style={{ height: '100vh', position: 'relative' }}>
     <div style={{
       position: 'absolute',
+      bottom: 0,
+      left: 0
+    }}>
+      <img src="./udesc.png" width="300px" />
+    </div>
+    <div style={{
+      position: 'absolute',
       top: '50%',
       left: '50%',
       msTransform: 'translate(-50%, -50%)',
