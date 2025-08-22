@@ -23,7 +23,7 @@ model Case {
 }
 
 model Answer {
-  id           Int     @id @default(autoincrement())
+  id           Int    @id @default(autoincrement())
   description  String
   isCorrect    Int
   possibility1 String
@@ -33,12 +33,14 @@ model Answer {
   reason2      String
   reason3      String
   caseId       Int
-  case         Case    @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  case         Case   @relation(fields: [caseId], references: [id], onDelete: Cascade)
 }
 
 model Game {
-  id     Int    @id @default(autoincrement())
-  name   String
-  ip     String
-  points Int @default(0)
+  id        Int      @id @default(autoincrement())
+  name      String
+  ip        String
+  points    Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
