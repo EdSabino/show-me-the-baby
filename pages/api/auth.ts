@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 
 export default async function handler(req, res) {
   const body = req.body;
-  if (body.email === 'admin@admin.com' && body.password === 'dpb1prb_NEM9jvg8hnf') {
+  if (body.email === 'admin@admin.com' && body.password === process.env.PASSWORD) {
     return res
       .status(200)
       .json({
